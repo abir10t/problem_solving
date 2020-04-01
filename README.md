@@ -1,6 +1,6 @@
 # .........................sorting patterns .....................
 
-##### problem:Sort Integers by The Number of 1 Bits(leetcode,sort) ->  sort the integers in the array in ascending order by the number of 1's in their binary representation and in case of two or more integers have the same number of 1's you have to sort them in ascending order.
+##### problem 1:Sort Integers by The Number of 1 Bits(leetcode,sort) ->  sort the integers in the array in ascending order by the number of 1's in their binary representation and in case of two or more integers have the same number of 1's you have to sort them in ascending order.
         static int bin(int n)
     {
        long long int x=0,i=1;
@@ -34,4 +34,45 @@
     vector<int> sortByBits(vector<int>& arr) {
          stable_sort(arr.begin(),arr.end(),cmp);
             return arr;       
+    }
+    
+    
+### problem 2:  intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]] ,newInterval = [4,8];; Output: [[1,2],[3,10],[12,16]]
+    vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {    
+    intervals.push_back(newInterval);
+    sort(intervals.begin(),intervals.end());
+    vector<vector<int>>v;
+    v.push_back(intervals[0]);
+    for(int i=1; i<intervals.size(); i++)
+    {
+    vector<int>&curr=v.back();
+
+        if(curr[1]<intervals[i][0])
+        {
+            v.push_back(intervals[i]);
+        }
+        else if(curr[1] < intervals[i][1])
+        {
+            curr[1]=intervals[i][1];
+        }
+    }    
+        return v;               
+    }
+  ##### Input: [[1,3],[2,6],[8,10],[15,18]] ; Output: [[1,6],[8,10],[15,18]] ;Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        if(intervals.empty() || intervals.size()==1)
+                return intervals;
+        
+        sort(intervals.begin(),intervals.end());
+        vector<vector<int>>v;
+        v.push_back(intervals[0]);
+        for(int i=1; i<intervals.size(); i++){
+           vector<int>&curr=v.back();  
+            if(curr[1] < intervals[i][0])
+                v.push_back(intervals[i]);
+           else if(curr[1] < intervals[i][1])
+                curr[1]=intervals[i][1];
+        }
+       return v;
+        
     }
