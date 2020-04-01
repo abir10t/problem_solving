@@ -37,7 +37,7 @@
     }
     
     
-### problem 2:  intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]] ,newInterval = [4,8];; Output: [[1,2],[3,10],[12,16]]
+##### problem 2:  intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]] ,newInterval = [4,8];; Output: [[1,2],[3,10],[12,16]]
     vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {    
     intervals.push_back(newInterval);
     sort(intervals.begin(),intervals.end());
