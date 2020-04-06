@@ -58,7 +58,9 @@
     }    
         return v;               
     }
-  ##### Input: [[1,3],[2,6],[8,10],[15,18]] ; Output: [[1,6],[8,10],[15,18]] ;Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
+    
+    
+        ##### Input: [[1,3],[2,6],[8,10],[15,18]] ; Output: [[1,6],[8,10],[15,18]] ;Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
         if(intervals.empty() || intervals.size()==1)
                 return intervals;
@@ -77,21 +79,20 @@
         
     }
 ##### Given a list of non negative integers, arrange them such that they form the largest number ->[10,2]=[2,10]
-         static int cmp(const int &a, const int &b)
+      static int cmp(const int &a, const int &b)
         {
 
-    return to_string(a)+to_string(b) > to_string(b)+to_string(a);
+            return to_string(a)+to_string(b) > to_string(b)+to_string(a);
         }
-     string largestNumber(vector<int>& nums) {
-        
-    sort(nums.begin(),nums.end(),cmp);
-    string a="";
-    for(int i=0; i<nums.size(); i++)
-    {
-    a=a+to_string(nums[i]);
-    }
-        if(a[0]=='0')
-            a="0";
-      return a;  
-    }
-        link :https://www.geeksforgeeks.org/given-an-array-of-numbers-arrange-the-numbers-to-form-the-biggest-number/
+      string largestNumber(vector<int>& nums) {
+           sort(nums.begin(),nums.end(),cmp);
+           string a="";
+           for(int i=0; i<nums.size(); i++)
+             {
+                a=a+to_string(nums[i]);
+             }
+            if(a[0]=='0')
+               a="0";
+       return a;  
+                }
+    link :https://www.geeksforgeeks.org/given-an-array-of-numbers-arrange-the-numbers-to-form-the-biggest-number/
