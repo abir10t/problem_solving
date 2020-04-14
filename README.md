@@ -102,7 +102,7 @@
    ##### nums[0] < nums[1] > nums[2] < nums[3] ->[1,3,2,2,3,1]; output : [2,3,1,3,1,2]
   sort the array.small number in even index. Big number in odd index. Small number start form (nums.size()-1)/2 && --; big number start form  nums.size()/2;
         
-         vector<int>nums{1,3,2,2,3,1};
+    vector<int>nums{1,3,2,2,3,1};
     vector<int>tmp=nums;
     sort(tmp.begin(),tmp.end());
     int i=0,
