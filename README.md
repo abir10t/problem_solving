@@ -1,6 +1,6 @@
 # .........................sorting patterns .....................
 
-##### problem 1:Sort Integers by The Number of 1 Bits(leetcode,sort) ->  sort the integers in the array in ascending order by the number of 1's in their binary representation and in case of two or more integers have the same number of 1's you have to sort them in ascending order.
+### problem 1:Sort Integers by The Number of 1 Bits(leetcode,sort) ->  sort the integers in the array in ascending order by the number of 1's in their binary representation and in case of two or more integers have the same number of 1's you have to sort them in ascending order.
         static int bin(int n)
     {
        long long int x=0,i=1;
@@ -37,12 +37,15 @@
     }
     
     
-##### problem 2:  intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]] ,newInterval = [4,8];; Output: [[1,2],[3,10],[12,16]]
-    vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {    
+### problem 2:  intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]] ,newInterval = [4,8];; Output: [[1,2],[3,10],[12,16]]
+    vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) { 
+    
     intervals.push_back(newInterval);
     sort(intervals.begin(),intervals.end());
+    
     vector<vector<int>>v;
     v.push_back(intervals[0]);
+    
     for(int i=1; i<intervals.size(); i++)
     {
     vector<int>&curr=v.back();
@@ -67,8 +70,10 @@
                 return intervals;
         
         sort(intervals.begin(),intervals.end());
+        
         vector<vector<int>>v;
         v.push_back(intervals[0]);
+        
         for(int i=1; i<intervals.size(); i++){
            vector<int>&curr=v.back();  
             if(curr[1] < intervals[i][0])
@@ -79,7 +84,7 @@
        return v;
         
     }
-##### Given a list of non negative integers, arrange them such that they form the largest number ->[10,2]=[2,10]
+### Given a list of non negative integers, arrange them such that they form the largest number ->[10,2]=[2,10]
       static int cmp(const int &a, const int &b)
         {
 
@@ -99,15 +104,17 @@
     link :https://www.geeksforgeeks.org/given-an-array-of-numbers-arrange-the-numbers-to-form-the-biggest-number/
     
     
-   ##### nums[0] < nums[1] > nums[2] < nums[3] ->[1,3,2,2,3,1]; output : [2,3,1,3,1,2]
+   ### nums[0] < nums[1] > nums[2] < nums[3] ->[1,3,2,2,3,1]; output : [2,3,1,3,1,2]
   sort the array.small number in even index. Big number in odd index. Small number start form (nums.size()-1)/2 && --; big number start form  nums.size()/2;
         
     vector<int>nums{1,3,2,2,3,1};
     vector<int>tmp=nums;
+    
     sort(tmp.begin(),tmp.end());
     int i=0,
-        j=(nums.size()-1)/2,
-        k=nums.size()-1;
+    j=(nums.size()-1)/2,
+    k=nums.size()-1;
+    
     while(i < tmp.size() )
     {
 
