@@ -123,3 +123,25 @@
         else
             nums[i++]=tmp[j--];
     }
+
+### https://leetcode.com/problems/contains-duplicate-iii/ Contains Duplicate III :find out whether there are two distinct indices i and j in the array such that the absolute difference between nums[i] and nums[j] is at most t and the absolute difference between i and j is at most k. nums = [1,2,3,1], k = 3, t = 0   ->  index[0] - index[3] == t & 3-0 =k. return true or false.
+            vector<pair<long,int>>du;
+            for(int i=0; i<nums.size(); i++)
+            {
+                du.push_back(make_pair(nums[i],i));
+
+            }
+           sort(du.begin(),du.end());
+           
+           for(int i=0; i<du.size(); i++)
+            {
+                int j=i+1;
+                while(j<du.size() && (du[j].first - du[i].first)<=t)
+                {
+                    if(abs(du[j].second-du[i].second) <= k)return true;  
+                    j++;
+                }
+            }
+          return false;   
+        
+                        
