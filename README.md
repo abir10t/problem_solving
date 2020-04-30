@@ -173,30 +173,8 @@ make all index pair as (value , index). sort the vactor of pair. now cheack the 
                       }
                   }
     return mat;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         
-                 /*
+               /*
         mat[3][3]=map[0]
         ma[3][2]=map[1]
         mat[3][1]=map[2]
