@@ -145,6 +145,68 @@ make all index pair as (value , index). sort the vactor of pair. now cheack the 
                     j++;
                 }
             }
-          return false;   
+          return false;  
+          
+          
+          
+
+### https://leetcode.com/problems/sort-the-matrix-diagonally/ Sort the Matrix Diagonally ->
+            vector<vector<int>> diagonalSort(vector<vector<int>>& mat) {
+            unordered_map<int, vector<int>> mp;
+            int m=mat.size();
+            int n=mat[0].size();
+            for(int i=0; i < m; i++) //we take all diagonall in map
+            {
+                for(int j=0; j<n; j++)
+                   mp[i-j].push_back(mat[i][j]);
+
+            }
+    
+            for(int k=-(n-1);k<m;k++) 
+              sort(mp[k].begin(),mp[k].end()); // now sort them
+    
+    
+            for(int i=m-1;i>=0;i--) {           //set them in their speacific position
+              for(int j=n-1;j>=0;j--) {
+                 mat[i][j]=mp[i-j].back();
+                 mp[i-j].pop_back();
+                      }
+                  }
+    return mat;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
-                        
+                 /*
+        mat[3][3]=map[0]
+        ma[3][2]=map[1]
+        mat[3][1]=map[2]
+        mat[3][0]=map[3]
+        mat[2][3]=map[-1]
+        mat[2][2]=map[0]
+        mat[2][1]=map[1]
+        mat[2][0]=map[2]
+        mat[1][3]=map[-2]
+        mat[1][2]=map[-1]
+        mat[1][1]=map[0]
+        mat[1][0]=map[1]
+        */      
