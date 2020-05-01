@@ -188,3 +188,28 @@ make all index pair as (value , index). sort the vactor of pair. now cheack the 
         mat[1][1]=map[0]
         mat[1][0]=map[1]
         */      
+
+### https://leetcode.com/problems/pancake-sorting/ Pancake Sorting -> make ascending order by reversing:
+          class Solution {
+        public:
+            vector<int> pancakeSort(vector<int>& A) {
+                 vector<int>v;
+            if(is_sorted( A.begin(),A.end()))
+            cout<<"return v";
+            int n=A.size(),i=0;
+            while( i < n)
+            {
+             int maxpos=distance(A.begin(), max_element(A.begin(),A.begin()+n-i)); //max_ element gives   highest value.when we use distance it goes with index.
+
+             reverse(A.begin(), A.begin()+maxpos+1);
+             reverse(A.begin(),A.begin()+n-i);
+             v.push_back(maxpos+1);
+             v.push_back(n-i);
+             if(is_sorted( A.begin(),A.end() ))
+                 return v;
+            i++;
+
+            }
+                return v;
+            }
+        };
