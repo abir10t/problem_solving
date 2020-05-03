@@ -213,3 +213,36 @@ make all index pair as (value , index). sort the vactor of pair. now cheack the 
                 return v;
             }
         };
+ 
+### https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/  -> (1/2) Two Pointers Technique :  s = "abpcplea", d="apple" return yes if apple exist by delating(index same) char from s :
+
+    bool issub(string& a, string& b)
+    {
+            int j=0,i=0;
+            while( i < a.size() && j < b.size())
+            {
+              if(a[i] == b[i])
+              {
+              i++;
+              j++;
+              }
+              else
+              i++;
+            }
+            if(j == b.size())
+             return true;
+    }
+    
+    if (issub(s, d))return true;
+    
+   
+    
+                
+            
+    
+ 
+   
+   
+
+
+
