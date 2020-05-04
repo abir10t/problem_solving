@@ -235,8 +235,56 @@ make all index pair as (value , index). sort the vactor of pair. now cheack the 
     
     if (issub(s, d))return true;
     
-   
     
+  ###  https://leetcode.com/problems/reorganize-string/  -> "aab" ans: "aba" if can not make it than return ""
+      
+    string reorganizeString(string S) {
+    map<char,int>mp;
+    
+    priority_queue<pair<int,char>>pq;
+    for(int i=0; i<S.size(); i++)
+    {
+        mp[S[i]]++;
+    }
+    
+    for(auto i: mp)
+        pq.push(make_pair(i.second,i.first));
+    string ans="";
+    
+    while(pq.size() > 1)
+    {
+        char most=pq.top().second;
+        pq.pop();
+        char les=pq.top().second;
+        pq.pop();
+        ans+=most;
+        ans+=les;
+        if(mp[most]-1 > 0)
+        {
+            mp[most]-=1;
+            pq.push(make_pair(mp[most], most));
+        }
+        if(mp[les]-1 > 0)
+        {
+            mp[les]-=1;
+            pq.push(make_pair(mp[les], les));
+        }
+
+    }
+    if(pq.size())
+    {
+     if(pq.top().first > 1)
+        return "";
+        
+    else
+    ans+=pq.top().second;
+
+    }
+    
+     return ans;
+    }
+         
+  logic :  https://www.youtube.com/watch?v=zaM_GLLvysw
                 
             
     
