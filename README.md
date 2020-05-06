@@ -188,6 +188,11 @@ make all index pair as (value , index). sort the vactor of pair. now cheack the 
         mat[1][1]=map[0]
         mat[1][0]=map[1]
         */      
+        
+   ##### Diagonal Traverse II -> https://leetcode.com/problems/diagonal-traverse-ii/   
+        
+        
+        
 
 ### https://leetcode.com/problems/pancake-sorting/ Pancake Sorting -> make ascending order by reversing:
           class Solution {
