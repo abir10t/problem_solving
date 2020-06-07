@@ -294,7 +294,29 @@ make all index pair as (value , index). sort the vactor of pair. now cheack the 
      ##### https://leetcode.com/problems/sort-colors/ 
  
    
-   
+  
+  
+  
+  
+  # .........................Array .....................
+  
+  #### need to cheacked things in previous index and next index
+  
+  ##### https://leetcode.com/problems/bulb-switcher-iii/ count if previous bulb is on
+    int max_num=0, cnt =0;
+    for(int i=0; i<light.size(); i++)
+    {
+        max_num=max(max_num,light[i]);
+        if(max_num == i+1)
+            cnt++;
+
+    }
+    return cnt;
+
+    
+    
+    
+     
 
 
 
