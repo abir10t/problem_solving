@@ -312,6 +312,33 @@ make all index pair as (value , index). sort the vactor of pair. now cheack the 
 
     }
     return cnt;
+    
+ ##### https://leetcode.com/problems/find-the-minimum-number-of-fibonacci-numbers-whose-sum-is-k/submissions/ given a value k, how many numbers need to create the k (using sum)
+                class Solution {
+                public:
+                
+                    int findMinFibonacciNumbers(int k) {
+                        vector<int>v= {1,1};
+                        
+                    while(k > v[v.size()-1])
+                    {
+                        v.push_back(v[v.size()-1]+ v[v.size()-2]);
+
+                    }
+                    
+                    int cnt =0;
+                    for(int i=v.size()-1; i>=0 && k>0; i--)
+                    {
+                       if( v[i] >k)
+                         continue;
+                      k-=v[i];
+                      cnt++;
+
+                    }
+                    return cnt;
+
+                    }
+                };
 
     
     
