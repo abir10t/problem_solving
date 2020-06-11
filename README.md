@@ -1,6 +1,6 @@
 # .........................sorting patterns .....................
 
-### problem 1:Sort Integers by The Number of 1 Bits(leetcode,sort) ->  sort the integers in the array in ascending order by the number of 1's in their binary representation and in case of two or more integers have the same number of 1's you have to sort them in ascending order.
+##### problem 1:Sort Integers by The Number of 1 Bits(leetcode,sort) ->  sort the integers in the array in ascending order by the number of 1's in their binary representation and in case of two or more integers have the same number of 1's you have to sort them in ascending order.
         static int bin(int n)
     {
        long long int x=0,i=1;
@@ -37,7 +37,7 @@
     }
     
     
-### problem 2:  intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]] ,newInterval = [4,8];; Output: [[1,2],[3,10],[12,16]]
+##### problem 2:  intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]] ,newInterval = [4,8];; Output: [[1,2],[3,10],[12,16]]
     vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) { 
     
     intervals.push_back(newInterval);
@@ -84,7 +84,7 @@
        return v;
         
     }
-### Given a list of non negative integers, arrange them such that they form the largest number ->[10,2]=[2,10]
+##### Given a list of non negative integers, arrange them such that they form the largest number ->[10,2]=[2,10]
       static int cmp(const int &a, const int &b)
         {
 
@@ -104,7 +104,7 @@
     link :https://www.geeksforgeeks.org/given-an-array-of-numbers-arrange-the-numbers-to-form-the-biggest-number/
     
     
-   ### nums[0] < nums[1] > nums[2] < nums[3] ->[1,3,2,2,3,1]; output : [2,3,1,3,1,2]
+   ##### nums[0] < nums[1] > nums[2] < nums[3] ->[1,3,2,2,3,1]; output : [2,3,1,3,1,2]
   sort the array.small number in even index. Big number in odd index. Small number start form (nums.size()-1)/2 && --; big number start form  nums.size()/2;
         
     vector<int>nums{1,3,2,2,3,1};
@@ -124,7 +124,7 @@
             nums[i++]=tmp[j--];
     }
 
-### https://leetcode.com/problems/contains-duplicate-iii/ Contains Duplicate III :find out whether there are two distinct indices i and j in the array such that the absolute difference between nums[i] and nums[j] is at most t and the absolute difference between i and j is at most k. nums = [1,2,3,1], k = 3, t = 0   ->  index[0] - index[3] == t & 3-0 =k. return true or false.
+##### https://leetcode.com/problems/contains-duplicate-iii/ Contains Duplicate III :find out whether there are two distinct indices i and j in the array such that the absolute difference between nums[i] and nums[j] is at most t and the absolute difference between i and j is at most k. nums = [1,2,3,1], k = 3, t = 0   ->  index[0] - index[3] == t & 3-0 =k. return true or false.
 
 make all index pair as (value , index). sort the vactor of pair. now cheack the two condition. 
 
@@ -150,7 +150,7 @@ make all index pair as (value , index). sort the vactor of pair. now cheack the 
           
           
 
-### https://leetcode.com/problems/sort-the-matrix-diagonally/ Sort the Matrix Diagonally ->
+##### https://leetcode.com/problems/sort-the-matrix-diagonally/ Sort the Matrix Diagonally ->
             vector<vector<int>> diagonalSort(vector<vector<int>>& mat) {
             unordered_map<int, vector<int>> mp;
             int m=mat.size();
@@ -194,7 +194,7 @@ make all index pair as (value , index). sort the vactor of pair. now cheack the 
         
         
 
-### https://leetcode.com/problems/pancake-sorting/ Pancake Sorting -> make ascending order by reversing:
+##### https://leetcode.com/problems/pancake-sorting/ Pancake Sorting -> make ascending order by reversing:
           class Solution {
         public:
             vector<int> pancakeSort(vector<int>& A) {
@@ -219,7 +219,7 @@ make all index pair as (value , index). sort the vactor of pair. now cheack the 
             }
         };
  
-### https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/  -> (1/2) Two Pointers Technique :  s = "abpcplea", d="apple" return yes if apple exist by delating(index same) char from s :
+##### https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/  -> (1/2) Two Pointers Technique :  s = "abpcplea", d="apple" return yes if apple exist by delating(index same) char from s :
 
     bool issub(string& a, string& b)
     {
@@ -241,7 +241,7 @@ make all index pair as (value , index). sort the vactor of pair. now cheack the 
     if (issub(s, d))return true;
     
     
-  ###  https://leetcode.com/problems/reorganize-string/  -> "aab" ans: "aba" if can not make it than return ""
+  #####  https://leetcode.com/problems/reorganize-string/  -> "aab" ans: "aba" if can not make it than return ""
       
     string reorganizeString(string S) {
     map<char,int>mp;
@@ -300,7 +300,7 @@ make all index pair as (value , index). sort the vactor of pair. now cheack the 
   
   # .........................Array .....................
   
-  #### need to cheacked things in previous index and next index
+  #### sum goes with array :
   
   ##### https://leetcode.com/problems/bulb-switcher-iii/ count if previous bulb is on
     int max_num=0, cnt =0;
